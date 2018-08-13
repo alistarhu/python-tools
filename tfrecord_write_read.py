@@ -83,6 +83,7 @@ def get_batch(tfrecord_file, batch_size, num_threads=4, shuffle=False, min_after
         img_batch, label_batch = tf.train.batch([image, label], batch_size,
                                                 capacity=capacity, num_threads=num_threads,
                                                 allow_smaller_final_batch=True)
+    return img_batch, label_batch
 
 
 def main():
