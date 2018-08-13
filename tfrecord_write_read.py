@@ -69,7 +69,7 @@ def read_tfrecord(tfrecord_file):
     return label, image, shape
 
 def get_batch(tfrecord_file, batch_size, num_threads=4, shuffle=False, min_after_dequeue=None):
-    label, image, shape = read_tfrecord(['E:/myrecord.tfrecord'])
+    label, image, shape = read_tfrecord(tfrecord_file)
 
     if min_after_dequeue is None:
         min_after_dequeue = batch_size * 10
